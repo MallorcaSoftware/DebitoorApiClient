@@ -1,0 +1,6 @@
+{
+	"modelPackage": "com.mallorcasoftware.debitoorapiclient.model",
+	"apiPackage": "com.mallorcasoftware.debitoorapiclient.api",
+	"groupId": "com.mallorcasoftware",
+	"artifactId": "debitoorapiclient"
+}

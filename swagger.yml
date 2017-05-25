@@ -1,0 +1,46 @@
+swagger: '2.0'
+
+info:
+  version: "0.0.1"
+  title: Debitoor.com Api Client
+
+host: api.debitoor.com
+basePath: /api
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /countries/{languagecode}/v1:
+    get:
+      operationId: getCountriesTranslatedByLanguageCode
+      description: |
+        Get sorted list of countries translated to the specified language
+      parameters:
+        -
+          name: languagecode
+          in: path
+          description: Given language code
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CountryDto'
+
+definitions:
+  CountryDto:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      isEU:
+        type: boolean
