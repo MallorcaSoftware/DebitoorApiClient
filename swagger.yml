@@ -3,6 +3,14 @@ swagger: '2.0'
 info:
   version: "0.0.1"
   title: Debitoor.com Api Client
+  description: >-
+      This is an unofficial api client for the debitoor api. Still in development, don´t use it in production!
+      More information at [https://developers.debitoor.com/api-reference](https://developers.debitoor.com/api-reference).
+  contact:
+    email: pascal.wild@mallorca-software.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 
 host: api.debitoor.com
 basePath: /api
@@ -13,9 +21,15 @@ consumes:
 produces:
   - application/json
 
+tags:
+  - name: countries
+    description: Countries api
+
 paths:
   /countries/{languagecode}/v1:
     get:
+      tags:
+        - countries
       operationId: getCountriesTranslatedByLanguageCode
       description: |
         Get sorted list of countries translated to the specified language

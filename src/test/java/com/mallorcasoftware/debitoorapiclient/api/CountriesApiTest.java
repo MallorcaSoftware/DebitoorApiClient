@@ -23,49 +23,39 @@
  */
 
 
-package com.mallorcasoftware.debitoorapiclient;
+package com.mallorcasoftware.debitoorapiclient.api;
 
+import com.mallorcasoftware.debitoorapiclient.ApiException;
+import com.mallorcasoftware.debitoorapiclient.model.CountryDto;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * API response returned by API call.
- *
- * @param T The type of data that is deserialized from response body
+ * API tests for CountriesApi
  */
-public class ApiResponse<T> {
-    final private int statusCode;
-    final private Map<String, List<String>> headers;
-    final private T data;
+public class CountriesApiTest {
 
+    private final CountriesApi api = new CountriesApi();
+
+    
     /**
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
+     * 
+     *
+     * Get sorted list of countries translated to the specified language 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers) {
-        this(statusCode, headers, null);
-    }
+    @Test
+    public void getCountriesTranslatedByLanguageCodeTest() throws ApiException {
+        String languagecode = null;
+        // List<CountryDto> response = api.getCountriesTranslatedByLanguageCode(languagecode);
 
-    /**
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
-     * @param data The object deserialized from response bod
-     */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers, T data) {
-        this.statusCode = statusCode;
-        this.headers = headers;
-        this.data = data;
+        // TODO: test validations
     }
-
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    public Map<String, List<String>> getHeaders() {
-        return headers;
-    }
-
-    public T getData() {
-        return data;
-    }
+    
 }
